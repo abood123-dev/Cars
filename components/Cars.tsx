@@ -4,6 +4,7 @@ import { Fetchcars } from '@/utlis/Fetch';
 import Image from 'next/image';
 import { Combobox, ComboboxInput, ComboboxOption, ComboboxOptions } from '@headlessui/react';
 import { useEffect } from 'react';
+import { useRef } from 'react';
 const   Cartypes = [
   { id: 1, name: 'Acura' },
   { id: 2, name: 'Alfa Romeo' },
@@ -88,22 +89,27 @@ const Cars = ({cars}:Props) => {
                   setshow(true);
                   setdetails(result);
               }
+              const sectionRef = useRef<HTMLDivElement>(null);
+              const Handlescroll=()=>
+              {
+                sectionRef.current?.scrollIntoView({ behavior: 'smooth' });               
+              }
   return (
     <>
-      <div className='pt-36 flex-row justify-center align-start'>
-            <h1 className='md:font-bold md:text-6xl/normal text-gray-800  md:ml-12 md:w-[520px] w-[250px] ml-[4px] font-sans text-xl  '>
+      <div className='md:pt-36 pt-32 flex-row justify-center align-start'>
+            <h1 className='md:font-bold md:text-6xl/normal text-gray-800  md:ml-12 md:w-[520px] w-[250px] ml-[10px] font-sans text-xl  '>
             Find,book,rent a car-quickly and super easy!
             </h1>
-            <p className='md:text-xl/7 text-gray-600 md:w-[380px] md:ml-12 md:mt-5 w-[220px] ml-[4px] mt-2 text-sm'>streamline your car rental experience with
+            <p className='md:text-xl/7 text-gray-600 md:w-[380px] md:ml-12 md:mt-5 w-[220px] ml-[10px] mt-2 text-sm'>streamline your car rental experience with
              our effortless booking process
             </p>
-            <button className='text-white md:text-sm md:py-4 md:px-6 bg-sky-500 border-none rounded-3xl md:ml-12 mt-8 outline-none text-sm py-2 px-3 ml-[4px] '>Explore cars</button>
+            <button onClick={()=>Handlescroll()} className='text-white md:text-sm md:py-4 md:px-6 bg-sky-500 border-none rounded-3xl md:ml-12 mt-8 outline-none text-sm py-2 px-3 ml-[10px] '>Explore cars</button>
          </div>
          <div>
          <Image src="/hero-bg.png" alt='herobg' width={900} height={60} className='md:object-cover md:absolute md:-top-5 md:-right-96 md:w-[900px] w-[300px]'/>
-         <Image src='/hero.png' alt='car' width={600} height={100} className='absolute md:top-36 md:right-12  top-[420px] right-28 w-[200px] md:w-[600px]' />    
+         <Image src='/hero.png' alt='car' width={600} height={100} className='absolute md:top-36 md:right-12  top-[400px] right-28 w-[200px] md:w-[600px]' />    
          </div>
-         <div className='flex flex-col items-start gap-1 md:pl-14 pt-[100px] md:pb-10 pl-4 pb-8 '>
+         <div className='flex flex-col items-start gap-1 md:pl-14 pt-[100px] md:pb-10 pl-4 pb-8 ' ref={sectionRef}>
               <div className='font-sans font-bold md:text-3xl text-xl text-gray-700'>Car Catalogue</div> <div className='font-sans text-sm'>Explore out cars you might like</div>
          </div>
          <div className='flex md:flex-row justify-start md:gap-[200px] gap-[50px] md:items-center pb-20 flex-col items-start'>
