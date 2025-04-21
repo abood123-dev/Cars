@@ -7,7 +7,7 @@ import Cars from '@/components/Cars';
 export default async function Home() {
 
   return (
-    <div>
+    <div className='overflow-x-hidden'> 
      <CarsWapper/>
     </div>
   )

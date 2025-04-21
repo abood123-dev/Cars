@@ -91,34 +91,34 @@ const Cars = ({cars}:Props) => {
   return (
     <>
       <div className='pt-36 flex-row justify-center align-start'>
-            <h1 className='font-bold text-6xl/normal text-gray-800  ml-12 w-[520px] '>
+            <h1 className='md:font-bold md:text-6xl/normal text-gray-800  md:ml-12 md:w-[520px] w-[250px] ml-[4px] font-sans text-xl  '>
             Find,book,rent a car-quickly and super easy!
             </h1>
-            <p className='text-xl/7 text-gray-600 w-[380px] ml-12 mt-5'>streamline your car rental experience with
+            <p className='md:text-xl/7 text-gray-600 md:w-[380px] md:ml-12 md:mt-5 w-[220px] ml-[4px] mt-2 text-sm'>streamline your car rental experience with
              our effortless booking process
             </p>
-            <button className='text-white text-sm py-4 px-6 bg-sky-500 border-none rounded-3xl ml-12 mt-8 outline-none'>Explore cars</button>
+            <button className='text-white md:text-sm md:py-4 md:px-6 bg-sky-500 border-none rounded-3xl md:ml-12 mt-8 outline-none text-sm py-2 px-3 ml-[4px] '>Explore cars</button>
          </div>
          <div>
-         <Image src="/hero-bg.png" alt='herobg' width={900} height={60} className='object-cover absolute -top-5 -right-96'/>
-         <Image src='/hero.png' alt='car' width={600} height={100} className='absolute top-36 right-12'/>    
+         <Image src="/hero-bg.png" alt='herobg' width={900} height={60} className='md:object-cover md:absolute md:-top-5 md:-right-96 md:w-[900px] w-[300px]'/>
+         <Image src='/hero.png' alt='car' width={600} height={100} className='absolute md:top-36 md:right-12  top-[420px] right-28 w-[200px] md:w-[600px]' />    
          </div>
-         <div className='flex flex-col items-start gap-1 pl-14 pt-[120px] pb-10'>
-              <div className='font-sans font-bold text-3xl text-gray-700'>Car Catalogue</div> <div className='font-sans text-sm'>Explore out cars you might like</div>
+         <div className='flex flex-col items-start gap-1 md:pl-14 pt-[100px] md:pb-10 pl-4 pb-8 '>
+              <div className='font-sans font-bold md:text-3xl text-xl text-gray-700'>Car Catalogue</div> <div className='font-sans text-sm'>Explore out cars you might like</div>
          </div>
-         <div className='flex flex-row justify-start gap-[200px] items-center pb-20'>
-              <div className='flex flex-row justify-center gap-[10px] items-center pl-14'>
+         <div className='flex md:flex-row justify-start md:gap-[200px] gap-[50px] md:items-center pb-20 flex-col items-start'>
+              <div className='flex md:flex-row justify-center gap-[10px]  md:pl-14 pl-3 flex-col'>
                    <div>
         <Combobox value={selectedPerson} onChange={setSelectedPerson} onClose={() => setQuery('')}>
            <ComboboxInput
              aria-label="Assignee"
              displayValue={(person:any) => person?.name}
              onChange={(event) => setQuery(event.target.value)}
-             className='px-11 py-3 bg-gray-200 rounded-3xl text-gray-500 relative focus:outline-none'
+             className='px-4 py-3 md:px-11 md:py-3 bg-gray-200 rounded-3xl text-gray-500 relative focus:outline-none'
              placeholder='Acura'
            />
-           <Image src='/car-logo.svg' width={20} height={20} alt='' className='absolute left-[70px] top-[809px]'/>
-           <ComboboxOptions anchor="bottom" className="border empty:invisible  pl-2 w-60 h-20 z-10 ml-[-30px]">
+           <Image src='/car-logo.svg' width={20} height={20} alt='' className='absolute md:left-[70px] md:top-[790px] md:inline-block hidden'/>
+           <ComboboxOptions anchor="bottom" className="border empty:invisible  pl-2 w-60 h-20 z-10 ml-[-10px]">
              {filteredPeople.map((person) => (
                <ComboboxOption key={person.id} value={person} className="font-sans text-[15px] cursor-pointer w-full hover:bg-blue-700 hover:text-white">
                  {person.name}
@@ -127,9 +127,9 @@ const Cars = ({cars}:Props) => {
            </ComboboxOptions>
          </Combobox>
          </div>
-                   <div><input className='px-11 py-3 bg-gray-200 rounded-3xl focus:outline-none relative' placeholder='Tiguan...'/></div>
-                   <Image src='/model-icon.png' width={20}  height={20} alt='' className='absolute left-[380px] top-[809px]'/>         
-                   <div><Image src='/magnifying-glass.svg' alt='' width={25} height={25} className='cursor-pointer' /></div>
+                   <div><input className='md:px-11 md:inline-block hidden md:py-3 px-4 py-3 bg-gray-200 rounded-3xl focus:outline-none relative' placeholder='Tiguan...'/></div>
+                   <Image src='/model-icon.png' width={20}  height={20} alt='' className='md:inline-block absolute  md:left-[380px] md:top-[790px] hidden'/>         
+                   <div><Image src='/magnifying-glass.svg' alt='' width={25} height={25} className='cursor-pointer md:inline-block hidden md:mt-4' /></div>
                </div> 
                <div className='flex flex-row gap-3'>
                    <div>
@@ -141,7 +141,7 @@ const Cars = ({cars}:Props) => {
                      </select>
                    </div>
                    <div>
-                   <select id='mySelect' onChange={(e)=>setyear(e.target.value)} className='w-full px-4 py-1 border border-gray-300 text-sm font-sans rounded-lg shadow-md text-start focus:shadow-lg  focus:outline-none transition'>
+                   <select id='mySelect' onChange={(e)=>setyear(e.target.value)} className='w-full  px-4 py-1  border border-gray-300 md:text-sm text-px font-sans rounded-lg shadow-md text-start focus:shadow-lg  focus:outline-none transition'>
                        <option value='year' selected>Year</option>
                        <option value='2015'>2015</option>
                        <option value='2016'>2016</option>
@@ -154,16 +154,16 @@ const Cars = ({cars}:Props) => {
                </div> 
                
          </div>
-    <div className='grid grid-cols-2 gap-x-[-20px] gap-y-[25px]  ml-10'>
+    <div className='md:grid md:grid-cols-2 md:gap-x-[-20px] md:gap-y-[25px]  md:ml-10 flex flex-col items-start ml-2 gap-4'>
       {filteredcars.map((car:carstyle)=>
         {
             return(
             
-            <div key={car.id} onMouseEnter={()=>sethovered(car.id)} onMouseLeave={()=>sethovered(null)} className='flex flex-col items-start content-center gap-3 px-[1px] w-[450px] py-[40px] bg-white rounded-xl border-gray-200 border-solid border-[2px] hover:bg-sky-500 hover:border-none hover:text-white transition duration-500 ease-out ' >
-               <p className='font-extrabold text-xl text-gray-900 pl-5'>{car.CarName}</p>
-                <Image src={car.CarImage} width={150} height={150} alt='' className='w-80 h-40 object-cover mix-blend-multiply pl-10'/>
+            <div key={car.id} onMouseEnter={()=>sethovered(car.id)} onMouseLeave={()=>sethovered(null)} className='flex flex-col items-start content-center gap-3 px-[1px] md:w-[450px] md:py-[40px] w-[240px] py-[20px] bg-white rounded-xl border-gray-200 border-solid border-[2px] hover:bg-sky-500 hover:border-none hover:text-white transition duration-500 ease-out ' >
+               <p className='font-extrabold md:text-xl text-sm text-gray-900 pl-5'>{car.CarName}</p>
+                <Image src={car.CarImage} width={150} height={150} alt='' className='md:w-80 md:h-40 object-cover mix-blend-multiply pl-10 w-40 h-20'/>
                {Hoveredid===car.id && 
-               ( <button onClick={()=>Handleclick(car.id)} className='bg-sky-500 border-black border-solid border-[3px] rounded-2xl ml-20 text-center px-20 py-2 hover:bg-black hover:text-sky-500' key={car.id}>See more details</button> )
+               ( <button onClick={()=>Handleclick(car.id)} className='bg-sky-500 border-black border-solid border-[3px] rounded-2xl md:ml-20 text-center md:px-20 md:py-2 ml-3 px-10 py-[2px] hover:bg-black hover:text-sky-500' key={car.id}>See more details</button> )
                }
             </div>
             )
@@ -176,17 +176,17 @@ const Cars = ({cars}:Props) => {
           return(
             <>
             <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[9998]"></div>
-          <div key={ca.id} className='bg-gray-100 fixed top-[-45%] left-[50%] translate-x-[-50%] translate-y-[50%] z-[9999] px-[55px] pb-[3px] pt-[6px] border-solid border-gray-400 border-[1px] rounded-xl'>
-             <Image src={ca.CarImage} width={150} height={150} alt='' className='w-80 h-40 object-cover mix-blend-multiply pl-10' />
-              <div className='font-sans font-extrabold text-3xl text-gray-900 pt-[12px]'>{ca.CarName}</div>
-              <div className='text-blue-600 text-xl font-sans pt-5'>{ca.price}</div>
-              <div className='text-gray-500 pt-5'>Type : {ca.type}</div>
-              <div className='text-gray-500 pt-5'>Oil : {ca.oil}</div>
-              <div className='text-gray-500 pt-5'>Seats : {ca.seats}</div>
-              <div className='text-gray-500 pt-5'>Transmission : {ca.transmission}</div>
-              <div className='text-gray-500 pt-5'>Horsepower : {ca.horsepower}</div>
-              <div className='text-green-600 text-xl pt-5 '>Origin : {ca.origin}</div>              
-              <div onClick={()=>setshow(false)} className='relative text-red-700 font-sans text-4xl top-[-523px] cursor-pointer left-[340px] ' >x</div>
+          <div key={ca.id} className='bg-gray-100 fixed md:top-[-45%] top-[-5%] left-[50%] translate-x-[-50%] translate-y-[50%] z-[9999] md:px-[55px] md:pb-[3px] md:pt-[6px] px-[22px] pb-[2px] pt-[3px] border-solid border-gray-400 border-[1px] rounded-xl'>
+             <Image src={ca.CarImage} width={150} height={150} alt='' className='md:w-80 md:h-40 w-40 h-20 object-cover mix-blend-multiply pl-10 pt-4 ' />
+              <div className='font-sans font-extrabold md:text-3xl text-xl text-gray-900 pt-[12px]'>{ca.CarName}</div>
+              <div className='text-blue-600 md:text-xl text-sm font-sans pt-5'>{ca.price}</div>
+              <div className='text-gray-500 md:pt-5 pt-2 '>Type : {ca.type}</div>
+              <div className='text-gray-500 md:pt-5 pt-2 '>Oil : {ca.oil}</div>
+              <div className='text-gray-500 md:pt-5 pt-2 '>Seats : {ca.seats}</div>
+              <div className='text-gray-500 md:pt-5 pt-2 '>Transmission : {ca.transmission}</div>
+              <div className='text-gray-500 md:pt-5 pt-2 '>Horsepower : {ca.horsepower}</div>
+              <div className='text-green-600 text-sm md:pt-5 pt-2 '>Origin : {ca.origin}</div>              
+              <div onClick={()=>setshow(false)} className='relative text-red-700 font-sans md:text-4xl text-2xl md:top-[-523px] top-[-380px] cursor-pointer md:left-[340px] left-[140px] ' >x</div>
           </div>
           </>
           )
