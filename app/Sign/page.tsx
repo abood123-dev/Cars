@@ -43,9 +43,9 @@ const Sign = () => {
     }
       const imgsrc="https://th.bing.com/th/id/OIP.Edb-NrWzAt6EvWZZhTnkBAHaES?w=278&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7";
   return (
-    <div className='flex flex-row justify-center items-center gap-10 mt-4'>
+    <div className='flex flex-row justify-center items-center gap-10 mt-4 ml-3 md:ml-0'>
     <div className='md:w-[400px] w-[350px] border-solid border-sky-600 border-[2px] mt-14 content-center rounded-xl'>
-    <div className='flex flex-col items-start gap-5 content-center md:pl-9 pl-3  pt-10 pb-5'>
+    <div className='flex flex-col items-start gap-5 content-center md:pl-9 pl-3 pr-3 md:pr-0  pt-10 pb-5'>
         <div className='font-sans font-bold text-gray-900 md:text-[20px] text-[15px]'>
             Name
         </div>
@@ -80,7 +80,7 @@ const Sign = () => {
     src="/converted_image.png"
     width={600}
     height={600}
-    className="md:absolute top-28 left-0 z-10 mix-blend-multiply hidden"
+    className="absolute md:inline-block top-28 left-0 z-10 mix-blend-multiply hidden"
   />
 </div>
 
